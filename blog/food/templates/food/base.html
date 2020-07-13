@@ -26,7 +26,7 @@
 </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Food Blog</a>
+  <a class="navbar-brand" href="/">FoodBlog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -53,7 +53,7 @@
       </li>
 
         <a class="nav-link" href="#">Login</a>
-        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
     </ul>
   </div>
 
@@ -66,6 +66,13 @@
 
 
     <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}{% endblock %}
     </div>
 
