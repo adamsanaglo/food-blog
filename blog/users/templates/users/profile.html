@@ -1,0 +1,5 @@
+{% extends "food/base.html" %}  # Inherits template from base
+{% load crispy_forms_tags %}
+{% block content %}
+  <h1>Welcome {{ user.username }}!</h1>
+{% endblock content%}
